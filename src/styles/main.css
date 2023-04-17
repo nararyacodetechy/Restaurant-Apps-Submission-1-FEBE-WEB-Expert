@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --main-color: #1B1B1B;
+  --secondary-color: #F2C07B;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 200;
+  line-height: normal;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+span {
+  color: var(--secondary-color);
+}
+
+/* Start Header */
+
+header {
+  top: 0;
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--main-color);
+  align-items: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+header a {
+  color: whitesmoke;
+  transition: all 0.4s ease;
+}
+
+header a:hover {
+  color: var(--secondary-color);
+}
+
+header nav {
+  display: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+header nav.open {
+  z-index: 3;
+  display: inline-flex;
+  padding: 200px 20px;
+  width: 75%;
+  height: 100vh;
+  background-color: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header nav.open .links-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Start Header */
+
+/* Start Main */
+main {
+  z-index: 1;
+}
+
+.jumbotron {
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../public/images/heros/hero-image_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.jumbotron h1, .jumbotron h2, .jumbotron a {
+  z-index: 1;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  opacity: 0.9;
+}
+
+.jumbotron .title {
+  color: whitesmoke;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.jumbotron .description {
+  color: whitesmoke;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.jumbotron .join {
+  margin-top: 40px;
+  border: 1px solid var(--secondary-color);
+  padding: 15px 25px;
+  color: var(--secondary-color);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.jumbotron .join:hover {
+  background-color: var(--secondary-color);
+  color: whitesmoke;
+}
+
+.list-content .big-title {
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+  color: #363636;
+  font-weight: 700;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* End Main */
+
+/* Start Footer Section  */
+
+footer {
+  background-color: var(--main-color);
+  text-align: center;
+}
+
+footer .footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.links .title {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: left;
+}
+
+.links .sub-links {
+  margin-top: 20px;
+}
+
+.links .sub-links li {
+  list-style: none;
+}
+
+.links .sub-links li a {
+  color: white;
+  text-decoration: none;
+  line-height: 35px;
+  transition: .3s ease-in-out;
+}
+
+.links .sub-links li a:hover {
+  padding-left: 5px;
+  color: var(--secondary-color);
+}
+
+footer .footer-copyright {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #181818;
+}
+
+.footer-copyright p {
+  color: #eee;
+  font-size: 18px;
+}
+
+/* End Footer Section  */
+
+
+/* Start Responsive Page */
+
+/* Tablet Size Responsive */
+@media screen and (min-width: 640px) {
+  header {
+    padding: 20px 35px;
+  }
+
+  header .canvas-menu {
+    display: none;
+  }
+
+  header nav {
+    display: inline-flex;
+    position: relative;
+  }
+
+  header nav .links-nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  .container {
+    padding: 35px;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .list-cards {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  footer {
+    text-align: justify;
+  }
+
+  footer .footer-links {
+    padding: 35px;
+  }
+}
+
+/* Desktop Size Responsive */
+@media screen and (min-width: 1200px) {
+  header {
+    padding: 20px 50px;
+  }
+
+  .container {
+    padding: 50px;
+  }
+
+  .jumbotron {
+    min-width: 1000px;
+  }
+
+  .list-cards {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  footer .footer-links {
+    padding: 50px;
+  }
+}
+
+/* End Responsive Page */
