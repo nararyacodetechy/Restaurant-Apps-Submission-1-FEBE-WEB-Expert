@@ -22,11 +22,23 @@ function main() {
             }
             
             .card {
+                position: relative;
+                border-radius: 10px;
                 min-width: 200px;
                 height: auto;
                 background-color: var(--main-color);
-                transition: transform .2s;
+                transition: all .2s ease-in-out;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            }
+
+            .card:hover:before {
+              position: absolute;
+              border-radius: 10px;
+              content: "";
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              background-color: rgba(0, 0, 0, 0.3);
             }
 
             .card .picture {
@@ -34,6 +46,7 @@ function main() {
             }
             
             .card .picture img {
+                border-radius: 10px 10px 0 0;
                 height: 200px;
                 width: 100%;
                 background-color: #eee;
